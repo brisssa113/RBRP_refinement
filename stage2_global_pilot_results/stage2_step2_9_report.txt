@@ -1,0 +1,24 @@
+Stage 2.9 Pilot Report
+======================
+
+Total runs: 800
+Dataset filter: ALL
+b: 4
+gammas: [0.5, 1.0, 1.5, 2.0, 3.0]
+seeds per dataset/gamma: 40
+error guard: 1.05 (GLOBAL against initial RBRP error E0)
+
+Overall
+  success rate (rho_A < 1 and rho_E <= 1.05*E0): 0.855000
+  amplification improvement rate: 0.855000
+  error‑guard satisfaction rate: 1.000000
+  mean rho_A: 0.666541
+  median rho_A: 0.664185
+  mean rho_E: 0.965674
+  median rho_E: 1.000000
+Valid runs: 800
+Timeouts: 0
+Errors: 0
+Wall time sec: 192.078
+
+See CSV files for complete per‑run results.

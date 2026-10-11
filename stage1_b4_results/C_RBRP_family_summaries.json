@@ -1,0 +1,82 @@
+{
+  "collinear_clusters": {
+    "n_points": 820,
+    "n_trials": 40,
+    "rank_min": 1,
+    "rank_max": 48,
+    "error_min": 0.0011063225285391147,
+    "error_max": 0.971261048500129,
+    "amp_min": 1.0894953676778978,
+    "amp_max": 696.6126831472257,
+    "matched_rank_error_gap": {
+      "found": true,
+      "amp_ratio": 83.73774702741761,
+      "min_amp": 1.875649808384795,
+      "max_amp": 157.06268916655029,
+      "min_error": 0.6932440087433326,
+      "max_error": 0.7564031925690085,
+      "rank": 4,
+      "n_points": 9
+    }
+  },
+  "localized_svd": {
+    "n_points": 964,
+    "n_trials": 40,
+    "rank_min": 1,
+    "rank_max": 48,
+    "error_min": 0.0010894581354283421,
+    "error_max": 0.8170813337024029,
+    "amp_min": 2.4813749046312523,
+    "amp_max": 47.33290145526968,
+    "matched_rank_error_gap": {
+      "found": true,
+      "amp_ratio": 5.5907306828884,
+      "min_amp": 5.2711221032749425,
+      "max_amp": 29.469424076030457,
+      "min_error": 0.02390772689242241,
+      "max_error": 0.026085624198405117,
+      "rank": 12,
+      "n_points": 7
+    }
+  },
+  "repeated_directions": {
+    "n_points": 816,
+    "n_trials": 40,
+    "rank_min": 1,
+    "rank_max": 48,
+    "error_min": 0.0007708897441395714,
+    "error_max": 0.9008677530079418,
+    "amp_min": 3.4389921549496063,
+    "amp_max": 895.3215375672125,
+    "matched_rank_error_gap": {
+      "found": true,
+      "amp_ratio": 142.45650771756348,
+      "min_amp": 6.2848763591923165,
+      "max_amp": 895.3215375672125,
+      "min_error": 0.32355823326457733,
+      "max_error": 0.3518847221623631,
+      "rank": 6,
+      "n_points": 14
+    }
+  },
+  "kernel_snapshots": {
+    "n_points": 1117,
+    "n_trials": 40,
+    "rank_min": 1,
+    "rank_max": 48,
+    "error_min": 0.0003320992763090823,
+    "error_max": 0.8662100143813822,
+    "amp_min": 4.618600070137107,
+    "amp_max": 31.64124767405041,
+    "matched_rank_error_gap": {
+      "found": true,
+      "amp_ratio": 3.7033865516998627,
+      "min_amp": 7.9151673654437795,
+      "max_amp": 29.312924375638126,
+      "min_error": 0.029293826919053304,
+      "max_error": 0.03221596568133315,
+      "rank": 16,
+      "n_points": 8
+    }
+  }
+}

@@ -1,0 +1,32 @@
+STAGE 1 FINAL VALIDATION SUMMARY
+========================================================================
+Decision: PASS
+
+PASS iff: exact counterexample has both errors <1e-8 and amp ratio >=1e3; noisy fixed-rank 5%-error window has amp ratio >=2; and at least two RBRP families have amp ratio >=2 at the same rank within a 10%-error window.
+
+Exact counterexample:
+{
+  "both_errors_below_1e-8": true,
+  "amplification_ratio_bad_over_good": 8253.949152261455
+}
+
+Noisy fixed-rank matched-error gap:
+{
+  "found": true,
+  "amp_ratio": 117.64857422863425,
+  "min_amp": 6.447261525851587,
+  "max_amp": 758.5111261955682,
+  "min_error": 0.40242473447798566,
+  "max_error": 0.4225366647074034,
+  "rank": null,
+  "n_points": 1635
+}
+
+RBRP families:
+- collinear_clusters: points=820, trials=40, error=[1.106e-03,9.713e-01], amp=[1.089e+00,6.966e+02], same-rank/similar-error gap=83.7x at k=4
+- localized_svd: points=964, trials=40, error=[1.089e-03,8.171e-01], amp=[2.481e+00,4.733e+01], same-rank/similar-error gap=5.59x at k=12
+- repeated_directions: points=816, trials=40, error=[7.709e-04,9.009e-01], amp=[3.439e+00,8.953e+02], same-rank/similar-error gap=142x at k=6
+- kernel_snapshots: points=1117, trials=40, error=[3.321e-04,8.662e-01], amp=[4.619e+00,3.164e+01], same-rank/similar-error gap=3.7x at k=16
+
+Interpretation:
+PASS supports only the Stage-1 claim that approximation error does not by itself control interpolation amplification, including for unmodified RBRP outputs. It does not prove a theorem about all matrices, nor that the proposed Stage-2 refinement will help.

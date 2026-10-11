@@ -1,0 +1,25 @@
+{
+  "stage1_pass": true,
+  "exact_counterexample": {
+    "both_errors_below_1e-8": true,
+    "amplification_ratio_bad_over_good": 8253.949152261455
+  },
+  "noisy_fixed_rank": {
+    "found": true,
+    "amp_ratio": 117.64857422863425,
+    "min_amp": 6.447261525851587,
+    "max_amp": 758.5111261955682,
+    "min_error": 0.40242473447798566,
+    "max_error": 0.4225366647074034,
+    "rank": null,
+    "n_points": 1635
+  },
+  "rbrp_families_with_same_rank_similar_error_gap_ge_2x": [
+    "collinear_clusters",
+    "localized_svd",
+    "repeated_directions",
+    "kernel_snapshots"
+  ],
+  "criterion": "PASS iff: exact counterexample has both errors <1e-8 and amp ratio >=1e3; noisy fixed-rank 5%-error window has amp ratio >=2; and at least two RBRP families have amp ratio >=2 at the same rank within a 10%-error window.",
+  "interpretation": "PASS supports only the Stage-1 claim that approximation error does not by itself control interpolation amplification, including for unmodified RBRP outputs. It does not prove a theorem about all matrices, nor that the proposed Stage-2 refinement will help."
+}

@@ -1,0 +1,3 @@
+case,skeleton,valid,rank,error_rel,amp2,amp_inf1,cond_Xs,interp_identity_error
+good,"[0, 1]",True,2,0.0,14.922343215784824,2.131730802949972,1.0,0.0
+bad,"[0, 2]",True,2,2.796044036104279e-13,123168.26213568164,20000.0,20000.000050000002,0.0

@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering\small
+\caption{Main experiment on the four synthetic datasets ($n=500$, $d=60$, 40 RBRP seeds each). $\rho_A=A_f/A_0$ and $\rho_E=E_f/E_0$ are averaged over seeds.}\label{tab:pilot}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Dataset & full $\rho_A$ & $T{=}10$ $\rho_A$ & full $\rho_E$ & evals (full) & evals ($T{=}10$) & time (s) full & time (s) $T{=}10$ \\
+\midrule
+Collinear clusters ($k=4$) & 0.522 & 0.573 & 1.007 & 3,215 & 51 & 2.4 & 0.04 \\
+Repeated directions ($k=4$) & 0.433 & 0.464 & 0.994 & 2,291 & 71 & 1.8 & 0.06 \\
+Localized SVD ($k=14$) & 0.380 & 0.392 & 0.793 & 7,119 & 296 & 7.8 & 0.32 \\
+Kernel snapshots ($k=16$) & 0.356 & 0.419 & 0.942 & 15,222 & 658 & 17.2 & 0.76 \\
+All (160 runs) & 0.423 & 0.462 & 0.934 & 6,962 & 269 & 7.3 & 0.29 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

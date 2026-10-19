@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering\small
+\caption{Refining the QRCP skeleton (one deterministic run per row).}\label{tab:qrcp}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrrrr}
+\toprule
+Matrix & $k$ & $A$ (QRCP) & $T{=}10$: $A/A_{\rm QRCP}$ & $E/E_{\rm QRCP}$ & full: $A/A_{\rm QRCP}$ & $E/E_{\rm QRCP}$ \\
+\midrule
+Burgers & 8 & 13.44 & 1.000 & 0.999 & 0.789 & 1.014 \\
+Burgers & 16 & 12.73 & 0.887 & 1.038 & 0.589 & 1.017 \\
+Burgers & 24 & 13.30 & 1.000 & 1.000 & 0.837 & 1.024 \\
+Digits & 10 & 18.66 & 0.769 & 1.001 & 0.676 & 1.002 \\
+Digits & 20 & 15.90 & 0.907 & 1.048 & -- & -- \\
+Digits & 30 & 17.00 & 0.932 & 1.023 & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

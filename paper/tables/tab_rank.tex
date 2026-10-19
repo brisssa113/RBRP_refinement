@@ -1,0 +1,28 @@
+\begin{table}[t]
+\centering\small
+\caption{Rank sensitivity (20 seeds per configuration).}\label{tab:rank}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrr}
+\toprule
+Dataset & $k$ & median $A_0$ & full $\rho_A$ (SE) & $T{=}10$ $\rho_A$ (SE) \\
+\midrule
+Kernel snapshots & 8 & 12.3 & 0.475 (0.033) & 0.509 (0.038) \\
+Kernel snapshots & 12 & 14.4 & 0.401 (0.029) & 0.447 (0.041) \\
+Kernel snapshots & 16 & 15.1 & 0.348 (0.033) & 0.401 (0.042) \\
+Kernel snapshots & 20 & 15.4 & 0.391 (0.031) & 0.440 (0.036) \\
+Localized SVD & 6 & 15.9 & 0.333 (0.042) & 0.347 (0.045) \\
+Localized SVD & 10 & 17.0 & 0.347 (0.047) & 0.355 (0.046) \\
+Localized SVD & 14 & 17.3 & 0.313 (0.037) & 0.325 (0.039) \\
+Localized SVD & 18 & 15.6 & 0.374 (0.038) & 0.393 (0.041) \\
+Collinear clusters & 4 & 5.1 & 0.498 (0.048) & 0.556 (0.057) \\
+Collinear clusters & 6 & 4.4 & 0.520 (0.049) & 0.556 (0.052) \\
+Collinear clusters & 8 & 5.6 & 0.474 (0.038) & 0.485 (0.038) \\
+Collinear clusters & 12 & 5.1 & 0.576 (0.051) & 0.576 (0.051) \\
+Repeated directions & 4 & 9.8 & 0.446 (0.021) & 0.474 (0.020) \\
+Repeated directions & 6 & 11.4 & 0.433 (0.032) & 0.450 (0.033) \\
+Repeated directions & 8 & 10.7 & 0.490 (0.026) & 0.490 (0.026) \\
+Repeated directions & 10 & 7.3 & 0.530 (0.037) & 0.530 (0.037) \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

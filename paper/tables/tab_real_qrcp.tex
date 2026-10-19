@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering\small
+\caption{Pipeline versus QRCP (median over seeds of the ratios; QRCP is a single deterministic skeleton) and mean wall-clock times.}\label{tab:realqrcp}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrrrr}
+\toprule
+Matrix & $k$ & Hybrid $A/A_{\rm QRCP}$ & Hybrid $E/E_{\rm QRCP}$ & Vol(1) time (s) & Ours-$T$10 time (s) & Hybrid time (s) \\
+\midrule
+Digits kernel & 8 & 0.89 & 1.02 & 0.63 & 2.3 & 2.2 \\
+Digits kernel & 16 & 0.89 & 1.01 & 0.63 & 5.7 & 5.5 \\
+Digits kernel & 32 & 0.90 & 1.01 & 0.64 & 25.7 & 19.0 \\
+ECG Hankel & 8 & 0.83 & 0.90 & 0.09 & 2.2 & 0.9 \\
+ECG Hankel & 16 & 0.73 & 0.97 & 0.10 & 7.2 & 3.3 \\
+ECG Hankel & 32 & 0.86 & 0.72 & 0.14 & 20.3 & 9.6 \\
+Image patches & 8 & 0.58 & 1.16 & 0.04 & 1.1 & 1.7 \\
+Image patches & 16 & 0.43 & 1.10 & 0.05 & 5.0 & 4.7 \\
+Image patches & 32 & 0.37 & 1.08 & 0.06 & 26.4 & 16.5 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

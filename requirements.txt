@@ -1,0 +1,8 @@
+# Versions with which the packaged results were verified (Python 3.12.3). Older minor versions should work.
+numpy>=2.0
+scipy>=1.13
+pandas>=2.2
+matplotlib>=3.8
+scikit-learn>=1.4      # digits dataset, digits-kernel matrix
+scikit-image>=0.22     # image-patch matrix (bundled test images, no download)
+pooch>=1.8             # needed by scipy.datasets.electrocardiogram (downloads ecg.dat once from GitHub)

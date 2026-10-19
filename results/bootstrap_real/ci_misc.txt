@@ -1,0 +1,7 @@
+Vol(f=1) violates E<=1.05E0 in 29 of 90 runs (32.2%), Wilson 95% CI [23.5%, 42.4%]; max rho_E 1.39
+VolGuard-500: feasible in 100% of runs; max rho_E 1.0498
+Ours-T10: feasible in 100% of runs; max rho_E 1.0488
+Hybrid-T10: feasible in 100% of runs; max rho_E 1.0495
+Hybrid-T10: pooled median rho_A 0.488 [0.463,0.564], mean 0.502 [0.480,0.524]
+   per config mean rho_A [95% CI]: Digits kernel k=8: 0.642 [0.571,0.715]; Digits kernel k=16: 0.590 [0.501,0.667]; Digits kernel k=32: 0.607 [0.563,0.646]; ECG Hankel k=8: 0.573 [0.501,0.643]; ECG Hankel k=16: 0.444 [0.349,0.527]; ECG Hankel k=32: 0.429 [0.364,0.496]; Image patches k=8: 0.553 [0.482,0.632]; Image patches k=16: 0.385 [0.355,0.430]; Image patches k=32: 0.294 [0.245,0.329]
+median of A(RBRP)/A(Hybrid) over all runs: 2.05 [1.78,2.16]

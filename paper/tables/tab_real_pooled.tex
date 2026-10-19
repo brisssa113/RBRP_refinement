@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering\small
+\caption{Additional real matrices: paired comparison pooled over the nine configurations and ten seeds, with 95\% bootstrap intervals (as in Table~\ref{tab:pooled}).}\label{tab:realpooled}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{llrrrrr}
+\toprule
+x & y & pairs & median $A$ ratio & median $E$ ratio & x dominates (\%) & y dominates (\%) \\
+\midrule
+Ours-T10 & Vol(f=1) & 90 & 1.031 [0.980, 1.062] & 1.093 [1.061, 1.106] & 7.8 [3.3, 12.2] & 26.7 [20.0, 33.3] \\
+Ours-T10 & VolGuard-500 & 90 & 1.030 [0.981, 1.054] & 1.099 [1.075, 1.114] & 5.6 [2.2, 10.0] & 35.6 [26.7, 44.4] \\
+Hybrid-T10 & VolGuard-500 & 90 & 0.893 [0.866, 0.922] & 1.029 [1.017, 1.042] & 16.7 [11.1, 23.3] & 0.0 [0.0, 0.0] \\
+Hybrid-T10 & Ours-T10 & 90 & 0.896 [0.880, 0.922] & 0.985 [0.964, 0.997] & 48.9 [38.9, 57.8] & 7.8 [3.3, 12.2] \\
+Hybrid-T10 & Vol(f=1) & 90 & 0.917 [0.885, 0.943] & 1.015 [1.010, 1.033] & 23.3 [16.7, 30.0] & 0.0 [0.0, 0.0] \\
+Ours-T10-noG & Vol(f=1) & 90 & 0.947 [0.924, 0.984] & 1.119 [1.099, 1.126] & 6.7 [2.2, 11.1] & 28.9 [21.1, 36.7] \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

@@ -1,0 +1,10 @@
+Vol(f=1) violates E<=1.05E0 in 64 of 200 runs (32.0%), Wilson 95% CI [25.9%, 38.8%]; max rho_E 2.44
+VolGuard-500: feasible in 100% of runs; max rho_E 1.0500
+Ours-T10: feasible in 100% of runs; max rho_E 1.0497
+Hybrid-T10: feasible in 100% of runs; max rho_E 1.0500
+Hybrid-T10: pooled median rho_A 0.562 [0.526,0.590], mean 0.552 [0.532,0.572]
+   per config mean rho_A [95% CI]: Burgers k=8: 0.642 [0.568,0.710]; Burgers k=16: 0.539 [0.468,0.612]; Burgers k=24: 0.473 [0.413,0.536]; Digits k=10: 0.793 [0.763,0.821]; Digits k=20: 0.734 [0.699,0.768]; Digits k=30: 0.591 [0.559,0.628]; Kernel snapshots k=16: 0.366 [0.304,0.431]; Localized SVD k=14: 0.306 [0.239,0.379]; Collinear clusters k=4: 0.600 [0.493,0.711]; Repeated directions k=4: 0.475 [0.437,0.518]
+Ours-full: pooled median rho_A 0.428 [0.401,0.447], mean 0.438 [0.413,0.462]
+   per config mean rho_A [95% CI]: Burgers k=8: 0.558 [0.517,0.592]; Burgers k=16: 0.402 [0.327,0.476]; Burgers k=24: 0.391 [0.330,0.452]; Digits k=10: 0.699 [0.656,0.736]; Kernel snapshots k=16: 0.348 [0.287,0.411]; Localized SVD k=14: 0.313 [0.245,0.388]; Collinear clusters k=4: 0.498 [0.409,0.588]; Repeated directions k=4: 0.446 [0.407,0.487]
+median of A(RBRP)/A(Hybrid) over all runs: 1.78 [1.70,1.90]
+corr(log A, log ||W||_F) over 1000 skeletons: 0.942; median A/||W||_F = 0.550

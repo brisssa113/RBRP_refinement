@@ -2,7 +2,7 @@ from pathlib import Path
 import numpy as np, pandas as pd
 ROOT=Path(__file__).resolve().parent.parent; RES=ROOT/'results'; OUT=ROOT/'paper'/'tables'; OUT.mkdir(parents=True,exist_ok=True)
 def rd(p,**k):
-    hits=list(RES.glob('*/'+p)); assert len(hits)==1, (p,hits)   # exact file name, must be unique under results/
+    hits=[h for h in RES.glob('*/'+p) if h.parent.name!='stage3_realdata_results']; assert len(hits)==1, (p,hits)   # exact file name, unique outside the real-data folder
     return pd.read_csv(hits[0],**k)
 NM={'nearly_collinear_clusters':'Collinear clusters','repeated_directions':'Repeated directions','localized_svd':'Localized SVD','kernel_snapshots':'Kernel snapshots','burgers_snapshots':'Burgers','digits':'Digits'}
 def w(name,header,rows,cols,caption,label,small=True):

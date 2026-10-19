@@ -45,11 +45,7 @@ python run_all.py paper           # optional, needs latexmk
 all have `--smoke`, `--only <matrix>` and `--summarize-only` (see the docstring of each script). Use one thread
 (`OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1`) for the runtime experiment.
 
-**Real-data matrices (image patches, ECG Hankel, digits kernel):** the raw results `results/stage3_realdata_results/` are not part of this package.
-`run_all.py` therefore keeps the three real-data tables already in `paper/tables/` and the stored `results/bootstrap_real/`. To regenerate them, put your
-`stage3_realdata_results/` folder into `results/` (or run `python run_all.py realdata`, ~1 h) and run `python run_all.py`.
-**Note:** `paper/figs/scatter_real.png` currently is a copy of `scatter.png` (identical bytes); it is replaced by the correct real-data scatter as soon as
-`results/stage3_realdata_results/final_scatter.png` exists.
+**Real-data matrices (image patches, ECG Hankel, digits kernel):** raw results are in `results/stage3_realdata_results/`; `run_all.py` regenerates their tables, bootstrap intervals and `scatter_real.png` like all other items.
 
 ## From paper to code
 
@@ -78,7 +74,8 @@ Checked on Python 3.12.3, numpy 2.4, scipy 1.17, pandas 3.0, scikit-learn 1.8, s
 * All ten generated tables of the main text (`pilot, tsweep, rank, compare, guard, runtime, qrcp, pooled, noise, nustar`) are regenerated **byte-identically** from the stored CSVs; the six bootstrap outputs are byte-identical too.
 * `stage1.py --block 4` re-run from scratch reproduces `stage1_b4_results` (`C_RBRP_all_families.csv`, `A_exact_counterexample.csv`, `B_noisy_fixed_rank_pairs.csv`) byte-identically; the hand-typed Stage-1 table and the b = 8 numbers quoted in Sec. 3 match the stored summaries.
 * All experiment scripts pass `--smoke`.
-* Figures: eleven are exact copies of script outputs; `tsweep.png` is the same data re-drawn by `make_figures.py` in paper styling.
+* The three real-data tables and their bootstrap outputs are byte-identical as well.
+* Figures: twelve are exact copies of script outputs; `tsweep.png` (paper version kept) can be re-drawn by `make_figures.py` in paper styling.
 
 ## Known caveats
 

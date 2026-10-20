@@ -25,6 +25,7 @@ RBRP_refinement/
 │   ├── stage3_final_experiments.py all-method paired comparison (main comparison table, pooled statistics)
 │   ├── stage3_noise_downstream.py  downstream perturbation experiment (random / worst-case noise)
 │   ├── stage3_realdata.py, realdata_loaders.py   additional real matrices: image patches, ECG Hankel, digits kernel
+│   ├── stage1_within_rank_stats.py  within-rank spread of A and E for RBRP skeletons (Sec. 3.3, 'typical spread')
 │   ├── bootstrap_ci.py             95% bootstrap intervals (seed = resampling unit, B = 5000, fixed RNG seed)
 │   ├── gen_tables.py, gen_ci_tables.py, gen_real_tables.py   CSV -> paper/tables/*.tex
 │   └── make_figures.py             results/ -> paper/figs/
@@ -52,6 +53,7 @@ all have `--smoke`, `--only <matrix>` and `--summarize-only` (see the docstring 
 | Paper item | Script (defaults = paper settings) | Stored result in `results/` |
 |---|---|---|
 | Sec. 3, Table `stage1`, Fig. `stage1` (b = 4) | `stage1.py --block 4 --outdir results/stage1_b4_results` | `stage1_b4_results/` |
+| Sec. 3.3 'typical spread' table | `stage1_within_rank_stats.py` | `stage1_b4_results/within_rank_stats.csv` |
 | Sec. 3 text, "block size b = 8" numbers | `stage1.py --block 8 --outdir results/stage1_b8_results` | `stage1_b8_results/` |
 | Table `pilot` (4 synthetic sets, 40 seeds) | `stage2_sorted_scan.py` | `stage2_sorted_scan_results/raw_results.csv` |
 | Table `tsweep`, Fig. `tsweep` | `stage2_t_sweep.py` | `stage2_T_sweep_results/` |

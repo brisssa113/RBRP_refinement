@@ -23,6 +23,8 @@ RBRP_refinement/
 │   ├── stage3_volume_baseline.py   volume-exchange baselines (also imported as a module by the final/noise/real-data scripts)
 │   ├── stage3_extra_ablations.py   error-guard ablation, refining the QRCP skeleton
 │   ├── stage3_final_experiments.py all-method paired comparison (main comparison table, pooled statistics)
+│   ├── stage3_qrcp_synthetic.py    QRCP baseline on the four synthetic datasets, paired with the final experiment (20 instances each)
+│   ├── check_exact_rank_bound.py   numerical check of the exact-rank proposition (Sec. 4) with the real Vol/VolGuard code
 │   ├── stage3_noise_downstream.py  downstream perturbation experiment (random / worst-case noise)
 │   ├── stage3_realdata.py, realdata_loaders.py   additional real matrices: image patches, ECG Hankel, digits kernel
 │   ├── stage1_within_rank_stats.py  within-rank spread of A and E for RBRP skeletons (Sec. 3.3, 'typical spread')
@@ -62,11 +64,13 @@ all have `--smoke`, `--only <matrix>` and `--summarize-only` (see the docstring 
 | (input of the next three) Burgers/digits, QRCP, full scans | `stage3_realistic_baseline.py` | `stage3_baseline_results/` |
 | Table `guard`, Fig. `guardA`, Table `qrcp` | `stage3_extra_ablations.py` | `stage3_ablation_results/` |
 | Table `compare`, Table `pooled`, Fig. `scatter` | `stage3_final_experiments.py` (+ `bootstrap_ci.py`) | `stage3_final_results/`, `bootstrap_synthetic_and_baselines/` |
+| Remark after Prop. `exact` (exact-rank bound check) | `check_exact_rank_bound.py` | `exact_rank_check/` |
+| Table `qrcp_synthetic` (QRCP on the synthetic datasets) | `stage3_qrcp_synthetic.py` (needs `stage3_final_results`) | `stage3_qrcp_synthetic_results/` |
 | Tables `noise`, `nustar`, Figs. `noise_random`, `noise_worst` | `stage3_noise_downstream.py` (+ `bootstrap_ci.py`) | `stage3_noise_results/`, `bootstrap_synthetic_and_baselines/` |
 | Tables `real`, `real_qrcp`, `real_pooled`, Fig. `scatter_real` | `stage3_realdata.py` (+ `bootstrap_ci.py`) | `stage3_realdata_results/`, `bootstrap_real/` |
 
 Order of dependence when re-running from scratch: `stage1` → `stage2_sorted_scan` → {`stage2_t_sweep`, `stage3_rank_sweep`, `stage3_runtime_scaling`}
-and `stage3_realistic_baseline` → {`stage3_extra_ablations`, `stage3_final_experiments`} → `stage3_noise_downstream`, `stage3_realdata` → bootstrap → tables/figures.
+and `stage3_realistic_baseline` → {`stage3_extra_ablations`, `stage3_final_experiments`} → `stage3_qrcp_synthetic`, `stage3_noise_downstream`, `stage3_realdata` → bootstrap → tables/figures.
 (`stage3_final_experiments.py` reuses the full-scan results of `stage2_sorted_scan` and `stage3_realistic_baseline`; this is why `run_all.py experiments` keeps this order.)
 
 ## Verification status

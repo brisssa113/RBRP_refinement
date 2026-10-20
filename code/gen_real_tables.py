@@ -10,7 +10,7 @@ P=pd.read_csv(f'{ci}/ci_pooled.csv')
 g=lambda ds,k,m,c: S[(S.dataset==ds)&(S.k==k)&(S.method==m)][c].iloc[0]
 order=list(dict.fromkeys(zip(S.dataset,S.k)))
 def tab(name,hdr,rows,cols,cap,label):
-    open(OUT/f'{name}.tex','w').write('\\begin{table}[t]\n\\centering\\small\n\\caption{'+cap+'}\\label{'+label+'}\n\\begin{adjustbox}{max width=\\linewidth}\n\\begin{tabular}{'+cols+'}\n\\toprule\n'+hdr+' \\\\\n\\midrule\n'+' \\\\\n'.join(rows)+' \\\\\n\\bottomrule\n\\end{tabular}\n\\end{adjustbox}\n\\end{table}\n')
+    open(OUT/f'{name}.tex','w').write('\\begin{table}[tbp]\n\\centering\\small\n\\caption{'+cap+'}\\label{'+label+'}\n\\begin{adjustbox}{max width=\\linewidth}\n\\begin{tabular}{'+cols+'}\n\\toprule\n'+hdr+' \\\\\n\\midrule\n'+' \\\\\n'.join(rows)+' \\\\\n\\bottomrule\n\\end{tabular}\n\\end{adjustbox}\n\\end{table}\n')
 rows=[' & '.join([NM[d],str(k)]+[f"{g(d,k,m,'median_A'):.1f}" for m in ['RBRP','QRCP','Vol(f=1)','VolGuard-500','Ours-T10','Hybrid-T10']]+[f"{100*g(d,k,'Vol(f=1)','guard_ok'):.0f}\\%"]) for d,k in order]
 tab('tab_real','Matrix & $k$ & RBRP & QRCP & Vol(1) & VolGuard & Ours-$T$10 & Hybrid & Vol(1) feasible',rows,'lrrrrrrrr','Additional real matrices (10 RBRP seeds): median amplification $A$ after each method and the share of Vol(1) runs satisfying $E\\le1.05E_0$.','tab:real')
 q=R[R.method=='QRCP'].set_index(['dataset','k'])[['A','E']].rename(columns={'A':'Aq','E':'Eq'})

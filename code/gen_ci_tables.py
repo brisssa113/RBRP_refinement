@@ -6,7 +6,7 @@ ci = sys.argv[1] if len(sys.argv) > 1 else str(ROOT/'results'/'bootstrap_synthet
 P = pd.read_csv(f'{ci}/ci_pooled.csv'); N = pd.read_csv(f'{ci}/ci_noise.csv'); PN = pd.read_csv(f'{ci}/ci_noise_pair.csv'); NS = pd.read_csv(f'{ci}/nu_star.csv')
 NM = {'nearly_collinear_clusters':'Collinear clusters','repeated_directions':'Repeated directions','localized_svd':'Localized SVD','kernel_snapshots':'Kernel snapshots','burgers_snapshots':'Burgers','digits':'Digits'}
 def tab(name, hdr, rows, cols, cap, label):
-    open(OUT/f'{name}.tex','w').write('\\begin{table}[t]\n\\centering\\small\n\\caption{'+cap+'}\\label{'+label+'}\n\\begin{adjustbox}{max width=\\linewidth}\n\\begin{tabular}{'+cols+'}\n\\toprule\n'+hdr+' \\\\\n\\midrule\n'+' \\\\\n'.join(rows)+' \\\\\n\\bottomrule\n\\end{tabular}\n\\end{adjustbox}\n\\end{table}\n')
+    open(OUT/f'{name}.tex','w').write('\\begin{table}[tbp]\n\\centering\\small\n\\caption{'+cap+'}\\label{'+label+'}\n\\begin{adjustbox}{max width=\\linewidth}\n\\begin{tabular}{'+cols+'}\n\\toprule\n'+hdr+' \\\\\n\\midrule\n'+' \\\\\n'.join(rows)+' \\\\\n\\bottomrule\n\\end{tabular}\n\\end{adjustbox}\n\\end{table}\n')
 f = lambda e,l,h,d=3: f'{e:.{d}f} [{l:.{d}f}, {h:.{d}f}]'
 pc = lambda e,l,h: f'{100*e:.1f} [{100*l:.1f}, {100*h:.1f}]'
 rows=[' & '.join([r.x.replace('_','\\_'), r.y.replace('_','\\_'), str(int(r.pairs)), f(r.A_ratio,r.A_lo,r.A_hi), f(r.E_ratio,r.E_lo,r.E_hi), pc(r.x_dom,r.xd_lo,r.xd_hi), pc(r.y_dom,r.yd_lo,r.yd_hi)]) for r in P.itertuples()]

@@ -49,7 +49,7 @@ def smoke():
         t = Path(t)
         for i, (s, extra) in enumerate([('stage2_sorted_scan', []), ('stage2_t_sweep', []), ('stage3_rank_sweep', []), ('stage3_runtime_scaling', []),
                                         ('stage3_realistic_baseline', []), ('stage3_volume_baseline', []), ('stage3_extra_ablations', []),
-                                        ('stage3_final_experiments', []), ('stage3_noise_downstream', []),
+                                        ('stage3_final_experiments', []), ('stage3_qrcp_synthetic', []), ('stage3_noise_downstream', []),
                                         ('stage3_realdata', ['--only', 'digits_kernel'])]):
             run(C / f'{s}.py', '--smoke', '--out', t / f'o{i}', *extra)
 
@@ -61,7 +61,7 @@ def experiments():
     run(C / 'stage1.py', '--block', 4, '--outdir', R / 'stage1_b4_results')
     run(C / 'stage1.py', '--block', 8, '--outdir', R / 'stage1_b8_results')    # only quoted in the text of Section 3
     for s in ['stage2_sorted_scan', 'stage2_t_sweep', 'stage3_rank_sweep', 'stage3_runtime_scaling', 'stage3_realistic_baseline',
-              'stage3_extra_ablations', 'stage3_final_experiments', 'stage3_noise_downstream']:
+              'stage3_extra_ablations', 'stage3_final_experiments', 'stage3_qrcp_synthetic', 'stage3_noise_downstream']:
         run(C / f'{s}.py')                              # defaults = paper settings (seeds, output folders, reference CSVs)
     realdata()
     figures()

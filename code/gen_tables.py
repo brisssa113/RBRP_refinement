@@ -6,7 +6,7 @@ def rd(p,**k):
     return pd.read_csv(hits[0],**k)
 NM={'nearly_collinear_clusters':'Collinear clusters','repeated_directions':'Repeated directions','localized_svd':'Localized SVD','kernel_snapshots':'Kernel snapshots','burgers_snapshots':'Burgers','digits':'Digits'}
 def w(name,header,rows,cols,caption,label,small=True):
-    t=('\\begin{table}[t]\n\\centering'+('\\small' if small else '')+'\n\\caption{'+caption+'}\\label{'+label+'}\n'
+    t=('\\begin{table}[tbp]\n\\centering'+('\\small' if small else '')+'\n\\caption{'+caption+'}\\label{'+label+'}\n'
        '\\begin{adjustbox}{max width=\\linewidth}\n\\begin{tabular}{'+cols+'}\n\\toprule\n'+header+' \\\\\n\\midrule\n'
        +' \\\\\n'.join(rows)+' \\\\\n\\bottomrule\n\\end{tabular}\n\\end{adjustbox}\n\\end{table}\n')
     open(OUT/f'{name}.tex','w').write(t)
@@ -53,4 +53,12 @@ a=rd('ablation_a_qrcp_refine.csv'); rows=[]
 for _,x in a.iterrows():
     rows.append(' & '.join([NM[x.dataset],str(x.k),f'{x.A_QRCP:.2f}',f"{x['rho_A_QRCP+T10']:.3f}",f"{x['rho_E_QRCP+T10']:.3f}",f(x['rho_A_QRCP+full']),f(x['rho_E_QRCP+full'])]))
 w('tab_qrcp','Matrix & $k$ & $A$ (QRCP) & $T{=}10$: $A/A_{\\rm QRCP}$ & $E/E_{\\rm QRCP}$ & full: $A/A_{\\rm QRCP}$ & $E/E_{\\rm QRCP}$',rows,'lrrrrrr','Refining the QRCP skeleton (one deterministic run per row).','tab:qrcp')
+# 8 QRCP on the four synthetic datasets (per matrix instance, paired by seed)
+q=rd('qrcp_synthetic_summary.csv'); rows=[]
+for _,x in q.iterrows():
+    h=f"{x['median_A_Hybrid-T10_over_QRCP']:.2f} [{x['ci_lo_Hybrid-T10']:.2f}, {x['ci_hi_Hybrid-T10']:.2f}]"
+    rows.append(' & '.join([NM[x.dataset],str(x.k),f'{x.median_A_RBRP:.1f}',f'{x.median_A_QRCP:.1f}',f"{x['median_A_Ours-T10']:.1f}",f"{x['median_A_Hybrid-T10']:.1f}",h,
+                            f"{100*x['frac_Hybrid-T10_below_QRCP']:.0f}",f'{x.median_E_QRCP_over_E0:.2f}',f'{100*x.frac_QRCP_within_budget:.0f}']))
+w('tab_qrcp_synthetic','Dataset & $k$ & RBRP & QRCP & Ours-T10 & Hybrid-T10 & Hybrid/QRCP & Hybrid $<$ QRCP (\\%) & QRCP $E/E_0$ & QRCP in budget (\\%)',rows,'lrrrrrrrrr',
+  'QRCP on the synthetic datasets (20 matrix instances each; one deterministic QRCP skeleton per instance). Columns 3--6: median amplification $A$. Hybrid/QRCP: median of the paired ratio of the amplifications with $95\\%$ percentile bootstrap interval over instances; ``Hybrid $<$ QRCP\'\': share of instances with a smaller amplification. QRCP $E/E_0$: median error relative to that of the RBRP skeleton; ``in budget\'\': share of instances with $E\\le1.05\\,E_0$.','tab:qrcp_synthetic')
 print('tables ok')
